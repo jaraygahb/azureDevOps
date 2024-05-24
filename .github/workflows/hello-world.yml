@@ -7,9 +7,20 @@ jobs:
       - name: Build
         run: echo "Hello World!"
       
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+      - name: publish to artifactory
+        uses: advancedcsg-open/action-jfrog-cli@master
         with:
-          name: artifact
-          path: dist/*
-          if-no-files-found: error
+          url: 'https://freedemo.jfrog.io/'
+          credentials type: 'accesstoken'
+          accesstoken: cmVmdGtuOjAxOjAwMDAwMDAwMDA6RU15MGFvTDB6dGV5V1Vid2RzOHFPOElXSVRQ
+          args: u "dist/*" "azuredevops-generic-local/" --recursive=true --build-name=hello
+
+
+
+
+      //- name: Upload artifacts
+        //uses: actions/upload-artifact@v4
+        //with:
+          //name: artifact
+          //path: dist/*
+          //if-no-files-found: error
