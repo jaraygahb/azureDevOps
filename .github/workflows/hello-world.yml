@@ -12,7 +12,7 @@ jobs:
         with:
           url: 'https://freedemo.jfrog.io/'
           credentials type: 'accesstoken'
-          accesstoken: cmVmdGtuOjAxOjAwMDAwMDAwMDA6RU15MGFvTDB6dGV5V1Vid2RzOHFPOElXSVRQ
+          accesstoken: ${{ secrets.REPOTOKEN }}
           args: u "dist/*" "azuredevops-generic-local/" --recursive=true --build-name=hello
 
 
