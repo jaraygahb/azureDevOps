@@ -26,10 +26,6 @@ jobs:
           if-no-files-found: error
 
       - uses: jfrog/setup-jfrog-cli@v4
-        env:
-          JF_URL: https://freedemo.jfrog.io/artifatory
-          JF_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}
-
       - run: |
           jf --version
           jf rt u "target/hello.html" "azuredevops-generic-local/" --url="https://freedemo.jfrog.io/artifactory" --user="bhagyarajdj@gmail.com" --password="GANApathi@191"
