@@ -11,5 +11,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: hello
-          path: package/**
+          path: package/hello.c
           if-no-files-found: error
