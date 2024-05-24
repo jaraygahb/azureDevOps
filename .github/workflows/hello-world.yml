@@ -1,15 +1,26 @@
 name: hello-world
-on: push
+on:
+  push:
+    branches: [ main ]
 jobs:
-  my-job:
+  archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
       - name: Build
         run: echo "Hello World!"
+
+      - name: Create folder for artifact
+        run: mkdir target
+
+      - name: Add artifact
+        run: |
+          cd target
+          echo "hello" > hello.html
+          cd ..
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: myartifact
-          path: ./demo.txt
+          path: target
           if-no-files-found: error
