@@ -31,5 +31,6 @@ jobs:
           JF_URL: https://freedemo.jfrog.io/
           JF_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}
 
-        run: |
-          jf rt upload "hello.html" azuredevops-generic-local/demo --build-name azuredemo --buildnumber 2
+       - name: Publish
+         run: |
+           jf rt upload "hello.html" azuredevops-generic-local/demo --build-name azuredemo --buildnumber 2
