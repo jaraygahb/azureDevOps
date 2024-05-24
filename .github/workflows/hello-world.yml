@@ -3,11 +3,15 @@ on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./package
     steps:
-      - name: my-step
+      - name: Build
         run: echo "Hello World!"
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: artifact
-          path: .code/**
+          name: hello
+          path: package/**
+          if-no-files-found: error
