@@ -6,26 +6,26 @@ jobs:
   archive-build-artifacts:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        run: echo "Hello World!"
+      - name: Print
+        run: echo "Dry run"
 
-      - name: Create folder for artifact
+      - name: Create
         run: mkdir target
 
-      - name: Add artifact
+      - name: Build
         run: |
           cd target
-          echo "hello" > hello.html
+          echo "This is for demo" > demo.html
           cd ..
       
-      - name: Upload artifacts
+      - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: myartifact
+          name: demo-artifact
           path: target
           if-no-files-found: error
 
       - uses: jfrog/setup-jfrog-cli@v4
       - run: |
           jf --version
-          jf rt u "target/hello.html" "azuredevops-generic-local/" --url="https://freedemo.jfrog.io/artifactory" --user="bhagyarajdj@gmail.com" --password="GANApathi@191"
+          jf rt u "target/demo.html" "azuredevops-generic-local/" --url="https://freedemo.jfrog.io/artifactory" --user="bhagyarajdj@gmail.com" --password="GANApathi@191"
