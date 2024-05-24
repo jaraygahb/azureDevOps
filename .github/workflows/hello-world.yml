@@ -25,12 +25,12 @@ jobs:
           path: target
           if-no-files-found: error
 
-      - name: Setup cli
-        uses: jfrog/setup-jfrog-cli@v3
+      - uses: jfrog/setup-jfrog-cli@v3
         env:
           JF_URL: https://freedemo.jfrog.io/
           JF_ACCESS_TOKEN: ${{ secrets.ARTIFACTORY_ACCESS_TOKEN }}
 
-       - name: Publish
-         run: |
-           jf rt upload "hello.html" azuredevops-generic-local/demo --build-name azuredemo --buildnumber 2
+      - run: |
+          cd target
+          jf rt upload "hello.html" azuredevops-generic-local/demo --build-name azuredemo --buildnumber 2
+          cd ..
