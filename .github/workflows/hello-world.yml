@@ -3,14 +3,24 @@ on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: package
+  //  defaults:
+   //   run:
+   //     working-directory: package
     steps:
       - name: Build
         run: echo "Hello World!"
+      
+      //- name: Create Jfrog cli
+        //uses: jfrog/setup-jfrog-cli@v4
+        //run: jf -version
+        //env:
+
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
+      //  env:
+        //  JF_URL: https://demo.jfrog.io/artifactory/release-bundles-v2/
+
         with:
           name: hello
           path: package/**
