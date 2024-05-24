@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: C:/Users/bhagyaraj.j/Downloads/demo/azureDevOps/.github/workflows/package
+        working-directory: ./package
     steps:
       - name: Build
         run: echo "Hello World!"
