@@ -32,6 +32,4 @@ jobs:
 
       - run: |
           jf --version
-          cd target
-          jf rt u "target/*.html" azuredevops-generic-local
-          cd ..
+          jf rt u "target/hello.html" azuredevops-generic-local
