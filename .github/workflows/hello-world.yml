@@ -28,4 +28,4 @@ jobs:
       - uses: jfrog/setup-jfrog-cli@v4
       - run: |
           jf --version
-          jf rt u "target/demo.html" "azuredevops-generic-local/" --url="https://freedemo.jfrog.io/artifactory" --user="bhagyarajdj@gmail.com" --password="xxx"
+          jf rt u "target/demo.html" "azuredevops-generic-local/" --url="https://freedemo.jfrog.io/artifactory" --user="bhxxzxdj@gmail.com" --password="xxx"
