@@ -1,7 +1,8 @@
 name: hello-world
-on:
-  push:
-    branches: [ main ]
+on: push
+permissions:
+  id-token: write
+  
 jobs:
   archive-build-artifacts:
     runs-on: ubuntu-latest
@@ -24,8 +25,16 @@ jobs:
           name: demo-artifact
           path: target
           if-no-files-found: error
+          
+      - name: Setup Jfrog ODIC
+        uses: jfrog/setup-jfrog-cli@v4
+        env:
+          JF_URL: https://freedemo.jfrog.io/artifactory
+        with:
+          oidc-provider-name: github-jfrog 
+          oidc-audience: gitjf-aud
 
-      - uses: jfrog/setup-jfrog-cli@v4
-      - run: |
-          jf --version
-          jf rt u "target/demo.html" "azuredevops-generic-local/" --url="https://freedemo.jfrog.io/artifactory" --user="bhxxzxdj@gmail.com" --password="xxx"
+    #  - uses: jfrog/setup-jfrog-cli@v4
+    #  - run: |
+    #      jf --version
+    #      jf rt u "target/demo.html" "azuredevops-generic-local/" --url="https://freedemo.jfrog.io/artifactory" --user="bhxxzxdj@gmail.com" --password="xxx"
