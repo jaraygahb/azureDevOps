@@ -29,7 +29,7 @@ jobs:
       - name: Setup Jfrog ODIC
         uses: jfrog/setup-jfrog-cli@v4
         env:
-          JF_URL: https://freedemo.jfrog.io
+          JF_URL: ${{ secrets.JFROG_URL }}
         with:
           oidc-provider-name: github-jfrog 
           oidc-audience: gitjf-aud
