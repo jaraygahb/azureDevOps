@@ -34,9 +34,9 @@ jobs:
           oidc-provider-name: github-jfrog 
           oidc-audience: gitjf-aud
         
-        - run: |
-            jf --version
-            jf rt bp --project=azuredevops
+       - run: |
+           jf --version
+           jf rt bp --project=azuredevops
 
     #  - uses: jfrog/setup-jfrog-cli@v4
     #  - run: |
