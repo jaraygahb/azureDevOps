@@ -19,7 +19,7 @@ jobs:
           echo "This is for demo" > demo.html
           cd ..
       
-      - name: Upload
+      - name: Download
         uses: actions/upload-artifact@v4
         with:
           name: demo-artifact
