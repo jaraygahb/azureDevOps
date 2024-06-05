@@ -37,7 +37,8 @@ jobs:
       - run: |
           jf --version
           jf rt bp --project=audops
-
+    
+    # testing
     #  - uses: jfrog/setup-jfrog-cli@v4
     #  - run: |
     #      jf --version
