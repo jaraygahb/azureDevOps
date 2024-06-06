@@ -3,7 +3,7 @@ on: push
 
 permissions:
   id-token: write
-  contents: write
+  contents: read
 
 jobs:
   archive-build-artifacts:
@@ -35,8 +35,11 @@ jobs:
         with:
           oidc-provider-name: gitcontributor 
           oidc-audience: gitcontib
-          sub: repo:jaraygahb/azureDevOps:ref:refs/heads/jfopenid
+          sub: repo:jaraygahb/azureDevOps:environment:prod
+          ref: refs/heads/jfopenid
           iss: https://token.actions.githubusercontent.com
+          role: rnd-ProjectAdmin
+          scope: SEC-APP-JFrog-RND-ProjectAdmin
         
       - run: |
           jf --version
