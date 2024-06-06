@@ -40,7 +40,7 @@ jobs:
           iss: https://token.actions.githubusercontent.com
           provider_type: GitHub
           priority: "1"
-          scope": applied-permissions/groups:readers
+          scope: applied-permissions/groups:SEC-APP-JFrog-RND-ProjectAdmin
         
       - run: |
           jf --version
