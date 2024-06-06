@@ -4,7 +4,6 @@ on: push
 permissions:
   id-token: write
   contents: write
-  deployments: write
 
 jobs:
   archive-build-artifacts:
@@ -36,6 +35,8 @@ jobs:
         with:
           oidc-provider-name: gitcontributor 
           oidc-audience: gitcontib
+          sub: repo:jaraygahb/azureDevOps:ref:refs/heads/jfopenid
+          iss: https://token.actions.githubusercontent.com
         
       - run: |
           jf --version
