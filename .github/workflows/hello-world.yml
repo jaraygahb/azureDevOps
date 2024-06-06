@@ -38,8 +38,9 @@ jobs:
           sub: repo:jaraygahb/azureDevOps:environment:prod
           ref: refs/heads/jfopenid
           iss: https://token.actions.githubusercontent.com
-          role: rnd-ProjectAdmin
-          scope: SEC-APP-JFrog-RND-ProjectAdmin
+          provider_type: GitHub
+          priority: "1"
+          scope": applied-permissions/groups:readers
         
       - run: |
           jf --version
