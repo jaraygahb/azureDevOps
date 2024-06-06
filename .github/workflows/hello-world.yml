@@ -1,7 +1,9 @@
 name: hello-world
 on: push
+
 permissions:
   id-token: write
+  contents: read
   
 jobs:
   archive-build-artifacts:
@@ -38,7 +40,7 @@ jobs:
           jf --version
           jf rt bp --project=audops
     
-    # testing 1
+    # testing 2
     #  - uses: jfrog/setup-jfrog-cli@v4
     #  - run: |
     #      jf --version
