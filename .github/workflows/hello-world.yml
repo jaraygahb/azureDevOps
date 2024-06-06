@@ -3,7 +3,8 @@ on: push
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
+  deployments: write
 
 jobs:
   archive-build-artifacts:
